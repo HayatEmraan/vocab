@@ -1,9 +1,7 @@
 import { z } from 'zod';
-import { Types } from 'mongoose';
 
 export const vocabValidate = z.object({
-  lessonId: z.instanceof(Types.ObjectId),
-  adminId: z.instanceof(Types.ObjectId),
+  lessonId: z.string(),
   word: z.string(),
   pronunciation: z.string(),
   meaning: z.string(),

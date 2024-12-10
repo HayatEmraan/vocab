@@ -4,6 +4,7 @@ import { lessonTypes } from './lesson.types';
 import httpStatus from 'http-status';
 
 const insertLesson = async (payload: lessonTypes) => {
+  console.log(payload);
   return await lessonModel.create(payload);
 };
 

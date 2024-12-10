@@ -1,9 +1,8 @@
 import { z } from 'zod';
-import { Types } from 'mongoose';
 
 export const historyValidate = z.object({
-  userId: z.instanceof(Types.ObjectId),
-  adminId: z.instanceof(Types.ObjectId),
+  userId: z.string(),
+  adminId: z.string(),
   action: z.string(),
   status: z.string(),
 });

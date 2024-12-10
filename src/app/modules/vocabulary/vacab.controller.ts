@@ -6,12 +6,13 @@ import httpStatus from 'http-status';
 import { vocabTypes } from './vacab.types';
 
 const createVocab: RequestHandler = async (req, res) => {
-  const data = await vocabService.insertVocab(req.body);
+  const { _id } = req.user;
+  const data = await vocabService.insertVocab({ ...req.body, adminId: _id });
 
   globalReturn<vocabTypes>(res, {
     statusCode: httpStatus.CREATED,
     success: true,
-    message: 'Vocab created successfully',
+    message: 'vocab created successfully',
     data,
   });
 };
@@ -21,7 +22,7 @@ const getAllVocab: RequestHandler = async (req, res) => {
   globalReturn<vocabTypes[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Vocab fetched successfully',
+    message: 'vocab fetched successfully',
     data,
   });
 };
@@ -31,7 +32,7 @@ const getSingleVocab: RequestHandler = async (req, res) => {
   globalReturn<vocabTypes | null>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Vocab fetched successfully',
+    message: 'vocab fetched successfully',
     data,
   });
 };
@@ -41,7 +42,7 @@ const updateVocab: RequestHandler = async (req, res) => {
   globalReturn<vocabTypes | null>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Vocab updated successfully',
+    message: 'vocab updated successfully',
     data,
   });
 };

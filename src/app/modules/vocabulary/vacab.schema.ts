@@ -7,6 +7,16 @@ const vocabSchema = new Schema<vocabTypes>(
       type: String,
       required: true,
     },
+    lessonId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: 'lesson',
+    },
+    adminId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: 'user',
+    },
     pronunciation: {
       type: String,
       required: true,

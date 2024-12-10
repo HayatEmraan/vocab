@@ -7,6 +7,11 @@ const lessonSchema = new Schema<lessonTypes>(
       type: String,
       required: true,
     },
+    adminId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: 'user',
+    },
     number: {
       type: Number,
       required: true,

@@ -6,12 +6,17 @@ import { lessonTypes } from './lesson.types';
 import httpStatus from 'http-status';
 
 const createLesson: RequestHandler = async (req, res) => {
-  const data = await lessonService.insertLesson(req.body);
+  const { _id } = req.user;
+  console.log(req.user);
+  const data = await lessonService.insertLesson({
+    ...req.body,
+    adminId: _id,
+  });
 
   globalReturn<lessonTypes>(res, {
     statusCode: httpStatus.CREATED,
     success: true,
-    message: 'Lesson created successfully',
+    message: 'lesson created successfully',
     data,
   });
 };
@@ -19,9 +24,9 @@ const createLesson: RequestHandler = async (req, res) => {
 const getAllLessons: RequestHandler = async (req, res) => {
   const data = await lessonService.getAllLessons();
   globalReturn<lessonTypes[]>(res, {
-    statusCode: 200,
+    statusCode: httpStatus.OK,
     success: true,
-    message: 'Lessons fetched successfully',
+    message: 'lessons fetched successfully',
     data,
   });
 };
@@ -29,9 +34,9 @@ const getAllLessons: RequestHandler = async (req, res) => {
 const getSingleLesson: RequestHandler = async (req, res) => {
   const data = await lessonService.getSingleLesson(req.params.id);
   globalReturn<lessonTypes | null>(res, {
-    statusCode: 200,
+    statusCode: httpStatus.OK,
     success: true,
-    message: 'Lesson fetched successfully',
+    message: 'lesson fetched successfully',
     data,
   });
 };
@@ -39,9 +44,9 @@ const getSingleLesson: RequestHandler = async (req, res) => {
 const updateLesson: RequestHandler = async (req, res) => {
   const data = await lessonService.updateLesson(req.params.id, req.body);
   globalReturn<lessonTypes | null>(res, {
-    statusCode: 200,
+    statusCode: httpStatus.OK,
     success: true,
-    message: 'Lesson updated successfully',
+    message: 'lesson updated successfully',
     data,
   });
 };
