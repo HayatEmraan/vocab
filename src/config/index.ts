@@ -10,4 +10,7 @@ export const env = {
   ALGO: process.env.ENC_ALGO,
   SECRET: process.env.ENC_SECRET,
   SALT: process.env.BCRYPT_SALT,
+  CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME,
+  CLOUD_KEY: process.env.CLOUDINARY_API,
+  CLOUD_SECRET: process.env.CLOUDINARY_SECRET,
 };

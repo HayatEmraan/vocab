@@ -8,11 +8,15 @@ import {
 } from './user.validation';
 import { auth } from '@app/middlewares/auth';
 import { userRole } from './user.constant';
+import { upload } from '@app/utils/uploadImage';
+import parseUser from './user.utils';
 
 const userRoutes = Router();
 
 userRoutes.post(
   '/create-user',
+  upload.single('image'),
+  parseUser,
   validate(userValidate),
   userController.createUser
 );
