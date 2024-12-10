@@ -10,7 +10,7 @@ const createUser: RequestHandler = async (req, res) => {
   globalReturn<userTypes>(res, {
     statusCode: httpStatus.CREATED,
     success: true,
-    message: 'User created successfully',
+    message: 'user created successfully',
     data,
   });
 };
@@ -21,7 +21,7 @@ const getMe: RequestHandler = async (req, res) => {
   globalReturn<userTypes | null>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'User fetched successfully',
+    message: 'user fetched successfully',
     data,
   });
 };
@@ -30,7 +30,7 @@ const updateUser: RequestHandler = async (req, res) => {
   globalReturn(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'User updated successfully',
+    message: 'user updated successfully',
     data: null,
   });
 };
@@ -40,7 +40,7 @@ const getAllUsers: RequestHandler = async (req, res) => {
   globalReturn<userTypes[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Users fetched successfully',
+    message: 'users fetched successfully',
     data,
   });
 };
@@ -62,7 +62,7 @@ const loginUser: RequestHandler = async (req, res) => {
   globalReturn(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'User logged in successfully',
+    message: 'user logged in successfully',
     data: null,
   });
 };

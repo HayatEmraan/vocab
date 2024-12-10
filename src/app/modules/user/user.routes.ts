@@ -6,6 +6,8 @@ import {
   userUpdateValidate,
   userValidate,
 } from './user.validation';
+import { auth } from '@app/middlewares/auth';
+import { userRole } from './user.constant';
 
 const userRoutes = Router();
 
@@ -21,14 +23,19 @@ userRoutes.post(
   userController.loginUser
 );
 
-userRoutes.get('/me', userController.getMe);
+userRoutes.get(
+  '/me',
+  auth(userRole.admin, userRole.user),
+  userController.getMe
+);
 
 userRoutes.patch(
   '/update-user/:id',
+  auth(userRole.admin),
   validate(userUpdateValidate),
   userController.updateUser
 );
 
-userRoutes.get('/all-users', userController.getAllUsers);
+userRoutes.get('/all-users', auth(userRole.admin), userController.getAllUsers);
 
 export default userRoutes;

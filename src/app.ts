@@ -4,12 +4,15 @@ import express, { Application, Request, Response } from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import router from '@app/routes/routes';
+import cookieParser from 'cookie-parser';
+import errorHandler from '@app/middlewares/errorHandler';
 
 const app: Application = express();
 
 // middlewares
 app.use(cors());
 app.use(helmet());
+app.use(cookieParser());
 app.use(morgan('dev'));
 app.disable('x-powered-by');
 
@@ -31,5 +34,8 @@ app.use('/api/v1', router);
 
 // not found route
 app.use('*', notFound);
+
+// error handler
+app.use(errorHandler);
 
 export default app;

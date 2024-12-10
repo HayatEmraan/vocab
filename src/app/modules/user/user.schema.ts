@@ -1,7 +1,9 @@
 import { model, Schema } from 'mongoose';
-import { userTypes } from './user.types';
+import { userInPass, userTypes } from './user.types';
+import bcrypt from 'bcrypt';
+import { env } from '@config/index';
 
-const userSchema = new Schema<userTypes>(
+const userSchema = new Schema<userTypes, userInPass>(
   {
     name: {
       type: String,
@@ -34,6 +36,15 @@ const userSchema = new Schema<userTypes>(
   }
 );
 
-const userModel = model<userTypes>('User', userSchema);
+userSchema.pre('save', async function (next) {
+  this.password = await bcrypt.hash(this.password, Number(env.SALT));
+  next();
+});
+
+userSchema.statics.isPasswordMatch = async (plain: string, hash: string) => {
+  return await bcrypt.compare(plain, hash);
+};
+
+const userModel = model<userTypes, userInPass>('User', userSchema);
 
 export default userModel;

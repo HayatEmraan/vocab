@@ -2,7 +2,7 @@ import { encryptTypes } from './encrypt.types';
 
 declare global {
   namespace Express {
-    interface Request {
+    export interface Request {
       user: encryptTypes;
     }
   }

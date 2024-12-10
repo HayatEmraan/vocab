@@ -9,4 +9,5 @@ export const env = {
   DATABASE_URL: process.env.DB_URL,
   ALGO: process.env.ENC_ALGO,
   SECRET: process.env.ENC_SECRET,
+  SALT: process.env.BCRYPT_SALT,
 };

@@ -1,4 +1,4 @@
-import { Types } from 'mongoose';
+import { Model, Types } from 'mongoose';
 
 export type userTypes = {
   _id: Types.ObjectId;
@@ -11,6 +11,10 @@ export type userTypes = {
   createdAt: Date;
   updatedAt: Date;
 };
+
+export interface userInPass extends Model<userTypes> {
+  isPasswordMatch(plainText: string, hashPassword: string): Promise<boolean>;
+}
 
 export type userLoginTypes = {
   email: string;

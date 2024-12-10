@@ -9,17 +9,26 @@ const insertUser = async (payload: userTypes) => {
   const findUser = await userModel.findOne({ email: payload.email });
 
   if (findUser) {
-    throw new appError('User already exists', httpStatus.CONFLICT);
+    throw new appError('user already exists', httpStatus.CONFLICT);
   }
 
   return await userModel.create(payload);
 };
 
 const loginUser = async ({ email, password }: userLoginTypes) => {
-  const findUser = await userModel.findOne({ email, password, isActive: true });
+  const findUser = await userModel.findOne({ email, isActive: true });
 
   if (!findUser) {
-    throw new appError('User not found', httpStatus.NOT_FOUND);
+    throw new appError('user not found', httpStatus.NOT_FOUND);
+  }
+
+  const passwordMatch = await userModel.isPasswordMatch(
+    password,
+    findUser.password
+  );
+
+  if (!passwordMatch) {
+    throw new appError('invalid password or email', httpStatus.NOT_FOUND);
   }
 
   const encrypt = {
@@ -42,7 +51,7 @@ const getUserById = async (id: Types.ObjectId) => {
   const findUser = await userModel.findById(id);
 
   if (!findUser) {
-    throw new appError('User not found', httpStatus.NOT_FOUND);
+    throw new appError('user not found', httpStatus.NOT_FOUND);
   }
 
   return await userModel.findById(id);
@@ -52,7 +61,7 @@ const updateUser = async (id: string, payload: Partial<userTypes>) => {
   const findUser = await userModel.findById(id);
 
   if (!findUser) {
-    throw new appError('User not found', httpStatus.NOT_FOUND);
+    throw new appError('user not found', httpStatus.NOT_FOUND);
   }
 
   return await userModel.findByIdAndUpdate(id, payload, { new: true });

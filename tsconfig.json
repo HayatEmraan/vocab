@@ -35,5 +35,6 @@
     "skipLibCheck": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist"],
+  "files": ["src/index.d.ts"]
 }

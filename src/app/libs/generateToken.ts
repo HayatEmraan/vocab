@@ -4,7 +4,7 @@ import { env } from '@config/index';
 import crypto from 'crypto';
 import httpStatus from 'http-status';
 
-const secretKey = env.SECRET as string;
+const secretKey = Buffer.from(env.SECRET as string, 'hex');
 const algorithm = env.ALGO as string;
 const ivInitial = crypto.randomBytes(16);
 
@@ -14,13 +14,12 @@ function createEncryptedToken(data: encryptTypes) {
     const tokenData = { ...data, exp: expirationTime };
 
     const dataString = JSON.stringify(tokenData);
-    const cipher = crypto.createCipheriv(
-      algorithm,
-      Buffer.from(secretKey, 'utf-8'),
-      ivInitial
-    );
+
+    const cipher = crypto.createCipheriv(algorithm, secretKey, ivInitial);
+
     let encrypted = cipher.update(dataString, 'utf-8', 'hex');
     encrypted += cipher.final('hex');
+
     return { iv: ivInitial.toString('hex'), encryptedToken: encrypted };
   } catch (error) {
     console.error('Error encrypting token:', error);

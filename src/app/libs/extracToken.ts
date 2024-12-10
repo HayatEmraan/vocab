@@ -3,7 +3,7 @@ import { env } from '@config/index';
 import crypto from 'crypto';
 import httpStatus from 'http-status';
 
-const secretKey = env.SECRET as string;
+const secretKey = Buffer.from(env.SECRET as string, 'hex');
 const algorithm = env.ALGO as string;
 
 function decryptToken(encryptedToken: string, iv: string) {
@@ -11,11 +11,7 @@ function decryptToken(encryptedToken: string, iv: string) {
     const ivBuffer = Buffer.from(iv, 'hex');
     const encryptedBuffer = Buffer.from(encryptedToken, 'hex');
 
-    const decipher = crypto.createDecipheriv(
-      algorithm,
-      Buffer.from(secretKey, 'utf-8'),
-      ivBuffer
-    );
+    const decipher = crypto.createDecipheriv(algorithm, secretKey, ivBuffer);
 
     let decrypted = decipher.update(encryptedBuffer);
     decrypted = Buffer.concat([decrypted, decipher.final()]);
@@ -34,11 +30,5 @@ function decryptToken(encryptedToken: string, iv: string) {
     throw new appError('Invalid or expired token', httpStatus.UNAUTHORIZED);
   }
 }
-
-const encryptedToken = '...';
-const iv = '...';
-
-const decryptedData = decryptToken(encryptedToken, iv);
-console.log('Decrypted Data:', decryptedData);
 
 export default decryptToken;
