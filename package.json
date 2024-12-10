@@ -1,0 +1,74 @@
+{
+  "name": "vocabulary-japanese",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/server.js",
+  "author": "Hayat <hayatprestige@gmail.com>",
+  "description": "(~日本~ Learn) : a Japanese Vocabulary Learning Application",
+  "license": "MIT",
+  "repository": "https://github.com/HayatEmraan/vocabulary-japanese",
+  "scripts": {
+    "commit": "cz",
+    "prepare": "husky",
+    "start": "node dist/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r tsconfig-paths/register src/server.ts",
+    "lint:format": "prettier --write src && eslint src --quiet --fix",
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "helmet": "^8.0.0",
+    "http-status": "^2.0.0",
+    "mongoose": "^8.8.3",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0",
+    "zod": "^3.23.8"
+  },
+  "engines": {
+    "node": ">=20.15.1",
+    "yarn": "please-use-npm",
+    "npm": ">=10.8.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "packageManager": "npm@10.8.2",
+  "keywords": [
+    "learn",
+    "Japanese",
+    "vocabulary",
+    "english"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.16.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/http-status": "^0.2.30",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.10.1",
+    "@typescript-eslint/eslint-plugin": "^8.16.0",
+    "@typescript-eslint/parser": "^8.16.0",
+    "commitlint": "^19.6.0",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.12.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.4.1",
+    "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.10",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.16.0"
+  }
+}

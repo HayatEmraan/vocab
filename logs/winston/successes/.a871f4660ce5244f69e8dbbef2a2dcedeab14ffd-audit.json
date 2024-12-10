@@ -1,0 +1,260 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\.a871f4660ce5244f69e8dbbef2a2dcedeab14ffd-audit.json",
+  "files": [
+    {
+      "date": 1733808229117,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-23-49-success.log",
+      "hash": "6b39177d871995cc95e2439fe3336b271ffaac96925042371468d1d0e31c0e03"
+    },
+    {
+      "date": 1733808230156,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-23-50-success.log",
+      "hash": "8dd92e99be67376674b1eebbcb00566a660ddd8b15f3eccdd6836178d5dba517"
+    },
+    {
+      "date": 1733810150740,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-55-50-success.log",
+      "hash": "7c3333acea0609e99bf532e48891bfdfef7b495760deb8f9dc3edf401e5e47e2"
+    },
+    {
+      "date": 1733810151843,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-55-51-success.log",
+      "hash": "9e67658e8027ad0c6f78700c97263089e30fcc24f5c99bb13599c764113ccc28"
+    },
+    {
+      "date": 1733810161377,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-56-01-success.log",
+      "hash": "e68350d121136f5b06a1f6487cedaf3afdc3fa0fcf97d4325100cb31ef160fda"
+    },
+    {
+      "date": 1733810162300,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-56-02-success.log",
+      "hash": "c4c49bfd7c97e87dc13c9d328a01c46835e03fa9c1c256a1e4137ecf472074dd"
+    },
+    {
+      "date": 1733810185244,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-56-25-success.log",
+      "hash": "56153bdea4ba30e39e07bd103c42fb47136b1899d20ce735003ab5a5a1992dda"
+    },
+    {
+      "date": 1733810186190,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-56-26-success.log",
+      "hash": "d1258bc69d8bf2131a657ac90cd4f73d9dea00206d27efef560d39370455a845"
+    },
+    {
+      "date": 1733810191058,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-56-31-success.log",
+      "hash": "88882bf1125906ce777cace741110c78ebfce8e7a92433cafe55c3fd4dda2b80"
+    },
+    {
+      "date": 1733810192011,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-56-32-success.log",
+      "hash": "07d53f378d0c6ddb2494ad84d1f5417c1f152994963ab191802d1a7a87081d2c"
+    },
+    {
+      "date": 1733810195161,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-56-35-success.log",
+      "hash": "3b2620414ac824cdffe6064ef8b81ab8846681a72fc3db84e99e30eaa2a730eb"
+    },
+    {
+      "date": 1733810196137,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-56-36-success.log",
+      "hash": "62412764a933e8149ddebd8a771642dcbc273fbf0719d4188ce550a9b9092e35"
+    },
+    {
+      "date": 1733810198868,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-56-38-success.log",
+      "hash": "890cb1617098bedb0aaa2e8368b9e021bb2434a39006c91ef5818af3b64b2694"
+    },
+    {
+      "date": 1733810199804,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-56-39-success.log",
+      "hash": "c6e21c1192f71f6da03c8158fb8bf4b87c7e25b0601f9a76d75fabe45ee2015f"
+    },
+    {
+      "date": 1733810204807,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-56-44-success.log",
+      "hash": "461f005e351660aeb19aff2856655cb942bc795547e8886d119feb96c863b4ae"
+    },
+    {
+      "date": 1733810205739,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-56-45-success.log",
+      "hash": "760b35f19651305cc2e825c917340bfe2aa9edfa77edf4c3d6d7ad6fd6738f65"
+    },
+    {
+      "date": 1733810209178,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-56-49-success.log",
+      "hash": "248a41a2ee378cf9fdb81e61b544a0ad50681e9857799228555882c1871a3c70"
+    },
+    {
+      "date": 1733810210141,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-56-50-success.log",
+      "hash": "36a312f6ac5e814f7bbd0f4c820e6a710b0d737612cb242f5d296deb8178feb1"
+    },
+    {
+      "date": 1733810230555,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-57-10-success.log",
+      "hash": "3ad2849b5b125c87b89032dc43fda7f9348c20c2b18bf3ada31e9341aa79beb6"
+    },
+    {
+      "date": 1733810231475,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-57-11-success.log",
+      "hash": "bbba543c5f021b5794d48a0940bad51f90e9dd6041fba63d8d70ace9741099ae"
+    },
+    {
+      "date": 1733810235861,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-57-15-success.log",
+      "hash": "48cf2e0a0a9b41156e4805f20d2f8f66d4963aa3edd8d4cf53963bd2a29f1a99"
+    },
+    {
+      "date": 1733810238495,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-57-18-success.log",
+      "hash": "2b5772023e671f2343687e39471639744b777e0a040dfe37ceabde65771b3325"
+    },
+    {
+      "date": 1733810239451,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-57-19-success.log",
+      "hash": "0165532e195605d95da3e9bb4a0eafa1958a77090c36cbcbd4965022a8eda8de"
+    },
+    {
+      "date": 1733810240894,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-57-20-success.log",
+      "hash": "7adfcaaf91b6fe2d397d2f1730972aa060361176e415769b39f7c05148ead590"
+    },
+    {
+      "date": 1733810242392,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-57-22-success.log",
+      "hash": "9cfdfd1707b89ac671b31f9dbc5a7f54b946e95d3884b97ef0b761d55e76d0c3"
+    },
+    {
+      "date": 1733810243308,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-57-23-success.log",
+      "hash": "47771c3d8ae54768dd8debddfe411d974af4ccc771ee7ccdbdfb9ed1ff834f5e"
+    },
+    {
+      "date": 1733810294019,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-58-14-success.log",
+      "hash": "e71e6298680bffe19ebcdc2c4855baaf80b6ce060715a6b5354eae6d91e78cdc"
+    },
+    {
+      "date": 1733810295383,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-58-15-success.log",
+      "hash": "183995c28e2333ac302ff1e17821a9fdd77ffde149e2b902bf8bfe907ff1c96d"
+    },
+    {
+      "date": 1733810296443,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-58-16-success.log",
+      "hash": "b403753d3b1afb23a6a0e5919432e7ed06db56371f090aa0edc2d8cdd798cde3"
+    },
+    {
+      "date": 1733810298428,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-58-18-success.log",
+      "hash": "a0ad4e83bebf83f5ee56831a3b49333625d1f5f9bf5030402390e9ca9708e141"
+    },
+    {
+      "date": 1733810299393,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-58-19-success.log",
+      "hash": "ee9bc7e99af10e884f9fe14e4272d82987e038a1a38bb0238e30704d536a0c22"
+    },
+    {
+      "date": 1733810303546,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-58-23-success.log",
+      "hash": "58d8b2bb196ca22cd93eface0c47c913fe498d06a7a02f0a4c66bfccc9918a97"
+    },
+    {
+      "date": 1733810304521,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-58-24-success.log",
+      "hash": "5d6951631bd7018cbe8dfc826c8a697bcd5fbb1a91aea98a4aaf3e8add4d3f0a"
+    },
+    {
+      "date": 1733810308471,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-58-28-success.log",
+      "hash": "2f920d353c6ca2639285256696bbaf6141227924904251bcf98bd1fad5dd93a5"
+    },
+    {
+      "date": 1733810312147,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-58-32-success.log",
+      "hash": "36e4d718eb3a06ff515f6be4d7b7c5bab8b7c1b9f241f514c9ce9e47ca022208"
+    },
+    {
+      "date": 1733810314133,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-58-34-success.log",
+      "hash": "08772c4709103376d60149b4c1bb05bbeb1240a1adf040e8a276c37d4e7233e3"
+    },
+    {
+      "date": 1733810315105,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-58-35-success.log",
+      "hash": "1dd3d57c8559c16ebc9a9ca66a3c6b341fb88477ce73f50527be8130b7a4111b"
+    },
+    {
+      "date": 1733810337513,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-58-57-success.log",
+      "hash": "9d2268c9dfbadc29b005ae61d19c9306c263ba2a59acb826ff831ad679c76cda"
+    },
+    {
+      "date": 1733810338509,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-11-58-58-success.log",
+      "hash": "bb3c98ee067b16138aadb1ce7d0531bdc747c91e7b25b5b55eca1a36261221dc"
+    },
+    {
+      "date": 1733810438973,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-12-00-38-success.log",
+      "hash": "00ae92e3f236828862da7bc02a3bf4ae7fa94236d2828c7c96d2cfce4b2ea652"
+    },
+    {
+      "date": 1733810442100,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-12-00-42-success.log",
+      "hash": "23e7b0bc8cab37cf4a780b2cc7b0cfdb6ddb811d281df5904d644846e257ce15"
+    },
+    {
+      "date": 1733810443167,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-12-00-43-success.log",
+      "hash": "6d6e6511762cf04952636805cc40fedb24b9f86b921848c16749f62e7b95c07e"
+    },
+    {
+      "date": 1733810479572,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-12-01-19-success.log",
+      "hash": "3b78b4986c57a701e65452a3f7d7f59f7e64c00bf40564c9656e296fb5d48f60"
+    },
+    {
+      "date": 1733810480526,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-12-01-20-success.log",
+      "hash": "2ecdb3b9362ccc76edd6bd6ae38bcd0d4ef1a2b4f54a68cea676b1a0d8f47919"
+    },
+    {
+      "date": 1733810483237,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-12-01-23-success.log",
+      "hash": "6fe463c6b5cf72ce9c3a4830966efed9d4a993b6e4b47f9fdb7e0bd136fd7a4f"
+    },
+    {
+      "date": 1733810484190,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-12-01-24-success.log",
+      "hash": "664a56346353d68e5fc764163ceac3d946cbdab93c2760a283a52dc1da49b106"
+    },
+    {
+      "date": 1733810492861,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-12-01-32-success.log",
+      "hash": "bc787d9f07deba428f09d51f71639bfa364f357a8e45ce7229593693623ca917"
+    },
+    {
+      "date": 1733810496514,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-12-01-36-success.log",
+      "hash": "fc47bbb89e903ef6b5ba64205b98c8e642a605eece6edd19140383ec49bef082"
+    },
+    {
+      "date": 1733810497507,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-12-01-37-success.log",
+      "hash": "8fbf61f646436c506c24cb942febb0a057987e2108c7654b062bbde13d8cf51e"
+    },
+    {
+      "date": 1733810505564,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\successes\\msg-2024-12-10-12-01-45-success.log",
+      "hash": "b153e7a002f67fbb277784d7141d2693610749206f47277bf9faabcab8cde298"
+    }
+  ],
+  "hashType": "sha256"
+}

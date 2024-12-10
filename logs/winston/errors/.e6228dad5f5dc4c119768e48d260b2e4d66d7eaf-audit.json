@@ -1,0 +1,20 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "E:\\IQT24\\programming_hero\\logs\\winston\\errors\\.e6228dad5f5dc4c119768e48d260b2e4d66d7eaf-audit.json",
+  "files": [
+    {
+      "date": 1733808229119,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\errors\\msg-2024-12-10-11-error.log",
+      "hash": "9d1e3fa0c5c053c5bcbba3544e522095f40ed5977bfdb594abe5a445498dced2"
+    },
+    {
+      "date": 1733810438975,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\errors\\msg-2024-12-10-12-error.log",
+      "hash": "66e0126d44bd1cff4c901cfd04b03513e280f567265826aaa8d4ec1d9b4049d2"
+    }
+  ],
+  "hashType": "sha256"
+}

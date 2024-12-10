@@ -1,0 +1,210 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\.893e4fe76bba502aa0e8bb9d16b04f1ecb02179f-audit.json",
+  "files": [
+    {
+      "date": 1732872425977,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-27-05-success.log",
+      "hash": "c97529bd8734b370551d9cdbc9b0dd82cc8bb12083258dd4b23e7b15a871613e"
+    },
+    {
+      "date": 1732872426003,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-27-06-success.log",
+      "hash": "0cef96fa61724624be7c2a987b2c9be3e492f90ff864ba0629463c0569a24a3d"
+    },
+    {
+      "date": 1732872433902,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-27-13-success.log",
+      "hash": "bf92801c50609a00bddb52b8ea863cb2288bf328143b2c4ff390ea8893c1d6a7"
+    },
+    {
+      "date": 1732872502888,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-28-22-success.log",
+      "hash": "6964ee0426c4fb5bce630c0d45bcfa88e145f6b8ec8874da4cc87153d8538ae7"
+    },
+    {
+      "date": 1732872506420,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-28-26-success.log",
+      "hash": "d50ee7de2adc00128772fb3f2ef56f8c50682adfba566c49288567d790b51f90"
+    },
+    {
+      "date": 1732872507532,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-28-27-success.log",
+      "hash": "88c065184d3eefc675c27feea8b140f35ba3a402e5ddf5848e8fe960fcbffd0f"
+    },
+    {
+      "date": 1732872514751,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-28-34-success.log",
+      "hash": "738d893ea0f85bae889aabaccea440796d56ed697d1c9c47eb1a9d3f46c60b83"
+    },
+    {
+      "date": 1732872516990,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-28-36-success.log",
+      "hash": "e90593fa3be41ebf27bda40671146cdaf9cec50c00cdfa2864b41f4765f0f3a8"
+    },
+    {
+      "date": 1732872518035,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-28-38-success.log",
+      "hash": "9113b28b004ae39f5f3d805be36384bb397737e83adf1d2048e58e659adccc1d"
+    },
+    {
+      "date": 1732872520241,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-28-40-success.log",
+      "hash": "319f17ee0a819cc059c9dbef3326eb3c6d4a8b5b12f1bedc3356613355c98e5c"
+    },
+    {
+      "date": 1732872524803,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-28-44-success.log",
+      "hash": "5b9446f8767215c5fadf24c1bc6d500c2d1fd7b227ac2728a65771e077ac5fc8"
+    },
+    {
+      "date": 1732872526133,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-28-46-success.log",
+      "hash": "a5ef2fbf1371c88c4843329dcbb1dc9d397929821b672cf964cddf4eaeb5e606"
+    },
+    {
+      "date": 1732872535208,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-28-55-success.log",
+      "hash": "798504a1532c44b6e49c0ff9d58448cb786cc42cba6855dcb32b781324b333f1"
+    },
+    {
+      "date": 1732872537968,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-28-57-success.log",
+      "hash": "9c4932035d42993328302309cf92a652dbdd6da074aebd2c0cb6a6f93e02027d"
+    },
+    {
+      "date": 1732872552833,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-29-12-success.log",
+      "hash": "d0ec61d8303c258484b730b90b592968edcf3a97ec43c971f9ab1b280d58d7d2"
+    },
+    {
+      "date": 1732872580527,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-29-40-success.log",
+      "hash": "65d17d5e1cf0a4c836e64832dcb23ece5089b615b04dcc5f52bb52e1f052d8b6"
+    },
+    {
+      "date": 1732872608196,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-30-08-success.log",
+      "hash": "58d06281e389618d36065fd76ae3b6d7b0c874e81d0010cfe1c38dcafa78fce3"
+    },
+    {
+      "date": 1732872646964,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-30-46-success.log",
+      "hash": "174b9fa33c502a9ff03b17ac3e07bc81c46c14d57ff777038eae194975a81a5d"
+    },
+    {
+      "date": 1732872697331,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-31-37-success.log",
+      "hash": "b903ad3f0ee2e1296ac4c2a2a9cdec61b881eae7d807d81e90a04fd601550c22"
+    },
+    {
+      "date": 1732872700354,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-31-40-success.log",
+      "hash": "d12cb18ad4fa37194c8054b9dac865d558acc152a9d0062fffa952c30edea3a5"
+    },
+    {
+      "date": 1732872701624,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-31-41-success.log",
+      "hash": "801086a30829162f16348326cd3553a362214994a0867f8ad38d2311ce2ddba2"
+    },
+    {
+      "date": 1732873184538,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-39-44-success.log",
+      "hash": "d5280eec11e51def924b7770128242d8282e7e706fe11469d04f2a47f2ef729d"
+    },
+    {
+      "date": 1732874302604,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-15-58-22-success.log",
+      "hash": "b9c3f4c7fa7272458a088bd536cf1c5787ca789412318cf754eaa4087330c000"
+    },
+    {
+      "date": 1732876259732,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-30-59-success.log",
+      "hash": "aeb650d24e49b93ecf3173fab0ad1b47f8c3a129754c908c68fe1743fc8b7a96"
+    },
+    {
+      "date": 1732876809799,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-40-09-success.log",
+      "hash": "eee53d482a26f037ffee719ee5bc1828598259116ed0858d15921969f8424b5b"
+    },
+    {
+      "date": 1732876817581,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-40-17-success.log",
+      "hash": "11963eb44944115e96ad1d3a6c34652fc3b0561a3fc0c0a92522230ef57264ef"
+    },
+    {
+      "date": 1732876827670,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-40-27-success.log",
+      "hash": "67c3d27fccbcf4a779f5df820dd6d0953648907876ef243967c598a6cee79c28"
+    },
+    {
+      "date": 1732876832634,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-40-32-success.log",
+      "hash": "9e7bb607023d1bb8d705f9a1be42259a325964be1d40a88ff8d127c800f1ff8e"
+    },
+    {
+      "date": 1732876835900,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-40-35-success.log",
+      "hash": "e2a6fd5a929c2d69ee8297f36c54a4b4153c2bbc3d0e25c079611b1474fcd983"
+    },
+    {
+      "date": 1732876838300,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-40-38-success.log",
+      "hash": "5564c0f61802a147ce26070b5398f75fbf6831a133f7411189022b1160607491"
+    },
+    {
+      "date": 1732876843064,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-40-43-success.log",
+      "hash": "b3747d66840bf4df98f9e8d17c6dac7699ed040a368c24d284be9beb6d83e9b4"
+    },
+    {
+      "date": 1732876844658,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-40-44-success.log",
+      "hash": "12b4234ec3d4288ed0a548c4a87e435d42774957735c4129c5b0e2d6be275c3a"
+    },
+    {
+      "date": 1732876847765,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-40-47-success.log",
+      "hash": "3ddf424867321f4c7e3a52f7d3b3efc086fc6867dd42a0ba91524f7e8cd285fd"
+    },
+    {
+      "date": 1732876850556,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-40-50-success.log",
+      "hash": "a078f2ee090081aade1904fa91a791779eb0d737e568532447ff39c914f5125e"
+    },
+    {
+      "date": 1732876863758,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-41-03-success.log",
+      "hash": "76a27da056de5ad6d092f43e1a7138998b1dde591f6aa0fd7473ab3d236f410e"
+    },
+    {
+      "date": 1732876871780,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-41-11-success.log",
+      "hash": "b615bce79b0c5a4636ec31d64ecae9751f38546d1facd4a02fc2229658ce4fbf"
+    },
+    {
+      "date": 1732876875461,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-41-15-success.log",
+      "hash": "69149f0e870879e1989d4202c43066d46c3d202ef9f572a75bb612275fd881ff"
+    },
+    {
+      "date": 1732876887538,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-41-27-success.log",
+      "hash": "98c4a46c0f6707ce1bd8ae34dcc62e97110948f026f2203fbb1f5d4bc7decf39"
+    },
+    {
+      "date": 1732876889315,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-29-16-41-29-success.log",
+      "hash": "7767d4b5345a8969e86610f0fe0e5550a6be3b9dabe1894bb2e42c8033a3a7c8"
+    },
+    {
+      "date": 1732984519195,
+      "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\msg-2024-11-30-22-35-19-success.log",
+      "hash": "61bfcea6eae2448f98bbf9fed821996a4e2ec426c0258a27387ffa023b1ca3e5"
+    }
+  ],
+  "hashType": "sha256"
+}

@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "paths": {
+      "@app/*": ["./app/*"],
+      "@routes/*": ["./app/routes/*"],
+      "@libs/*": ["./app/libs/*"],
+      "@middlewares/*": ["./app/middlewares/*"],
+      "@errors/*": ["./app/errors/*"],
+      "@modules/*": ["./app/modules/*"],
+      "@utils/*": ["./app/utils/*"],
+      "@types/*": ["./app/types/*"],
+      "@config/*": ["./config/*"]
+    },
+
+    "outDir": "./dist",
+    "noEmitOnError": true,
+
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

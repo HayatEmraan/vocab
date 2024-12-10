@@ -1,0 +1,55 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\.0f8c7d9f746a00a214e0527ae0f6bb4371a8cb79-audit.json",
+    "files": [
+        {
+            "date": 1732872336674,
+            "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\docker-2024-11-29-15-25-36-success.log",
+            "hash": "208205bee5af63e781aa0b33a55031cae95cbd6f20ca48f8a0de9e3c78f82a6d"
+        },
+        {
+            "date": 1732872355584,
+            "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\docker-2024-11-29-15-25-55-success.log",
+            "hash": "e77dd6f355d4c3f6c70a0afd70cd7d3d5a7e3f0c5147ec4737c1ef1cbfd8f94b"
+        },
+        {
+            "date": 1732872361949,
+            "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\docker-2024-11-29-15-26-01-success.log",
+            "hash": "a41cbc6a4ae5f8d7997e903dd0d18c157847c2c1f1f5499a4d2d5a2ea3b3c6a0"
+        },
+        {
+            "date": 1732872364218,
+            "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\docker-2024-11-29-15-26-04-success.log",
+            "hash": "390e5c2a9e1d9cd68bce65dae5c23bf020dbc624176bb8ab8d37708ef4e0695a"
+        },
+        {
+            "date": 1732872371904,
+            "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\docker-2024-11-29-15-26-11-success.log",
+            "hash": "a8a989a14b334c02001271fb4a0405b7d2c3990426d0f14ce00acc9a9299be3a"
+        },
+        {
+            "date": 1732872376254,
+            "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\docker-2024-11-29-15-26-16-success.log",
+            "hash": "ec0f916aa013eb6a0b2d5f38e361eb1e0d3cb37353777ca736e4fb9bc4867230"
+        },
+        {
+            "date": 1732872381780,
+            "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\docker-2024-11-29-15-26-21-success.log",
+            "hash": "1fbfab3abb3ec030d99b4ee0d16cd894803f41de48ba2439154998a087289586"
+        },
+        {
+            "date": 1732872404568,
+            "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\docker-2024-11-29-15-26-44-success.log",
+            "hash": "91c6400a3b2e992029a3827c148a71d04021bd220ec5ad3e43bf6f59e4dcafd8"
+        },
+        {
+            "date": 1732872413800,
+            "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\docker-2024-11-29-15-26-53-success.log",
+            "hash": "10beb6b3cb5be53dfd5c401b5e9138ffdb83d494b92e182fc7e72b186f676ad8"
+        }
+    ],
+    "hashType": "sha256"
+}

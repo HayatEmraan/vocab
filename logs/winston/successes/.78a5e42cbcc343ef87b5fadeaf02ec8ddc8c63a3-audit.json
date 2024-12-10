@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\.78a5e42cbcc343ef87b5fadeaf02ec8ddc8c63a3-audit.json",
+    "files": [
+        {
+            "date": 1732872424424,
+            "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\successes\\s-2024-11-29-15-27-04-success.log",
+            "hash": "67a7156e91ad23011913bc97f0f356a5b50dc091398fdefb6e044f611a76b650"
+        }
+    ],
+    "hashType": "sha256"
+}

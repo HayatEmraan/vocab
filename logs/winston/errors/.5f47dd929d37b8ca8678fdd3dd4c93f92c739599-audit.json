@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\errors\\.5f47dd929d37b8ca8678fdd3dd4c93f92c739599-audit.json",
+    "files": [
+        {
+            "date": 1732872336676,
+            "name": "F:\\cuanrd_consulting\\MSGenerator\\logs\\winston\\errors\\docker-2024-11-29-15-error.log",
+            "hash": "178795861537be64bdce9aedf43ab144c191e5468bf3379102d343fe3eb3962d"
+        }
+    ],
+    "hashType": "sha256"
+}
