@@ -20,3 +20,8 @@ export type userLoginTypes = {
   email: string;
   password: string;
 };
+
+export type userReason = {
+  adminId: Types.ObjectId;
+  reason: string;
+};

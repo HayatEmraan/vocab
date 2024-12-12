@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { catchAsync } from '@app/utils/catchAsync';
 import globalReturn from '@app/utils/globalReturn';
 import { RequestHandler } from 'express';
@@ -27,11 +28,17 @@ const getMe: RequestHandler = async (req, res) => {
 };
 
 const updateUser: RequestHandler = async (req, res) => {
+  const { _id } = req.user;
+  const data = await userService.updateUser(req.user._id, {
+    ...req.body,
+    adminId: _id,
+  });
+
   globalReturn(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'user updated successfully',
-    data: null,
+    data,
   });
 };
 
@@ -50,12 +57,16 @@ const loginUser: RequestHandler = async (req, res) => {
 
   res.cookie('token', encryptedToken, {
     httpOnly: true,
-    secure: true,
+    // secure: false,
+    path: '/',
+    sameSite: 'lax',
     maxAge: 24 * 60 * 60 * 1000,
   });
   res.cookie('iv', iv, {
     httpOnly: true,
-    secure: true,
+    // secure: false,
+    path: '/',
+    sameSite: 'lax',
     maxAge: 24 * 60 * 60 * 1000,
   });
 
@@ -63,7 +74,20 @@ const loginUser: RequestHandler = async (req, res) => {
     statusCode: httpStatus.OK,
     success: true,
     message: 'user logged in successfully',
-    data: null,
+    data: {
+      token: encryptedToken,
+      iv,
+    },
+  });
+};
+
+const getStats: RequestHandler = async (req, res) => {
+  const data = await userService.getStats();
+  globalReturn<any>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'user stats fetched successfully',
+    data,
   });
 };
 
@@ -73,4 +97,5 @@ export const userController = {
   updateUser: catchAsync(updateUser),
   getAllUsers: catchAsync(getAllUsers),
   loginUser: catchAsync(loginUser),
+  getStats: catchAsync(getStats),
 };

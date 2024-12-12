@@ -15,6 +15,28 @@ const createHistory: RequestHandler = async (req, res) => {
   });
 };
 
+const createVocabHistory: RequestHandler = async (req, res) => {
+  const data = await historyService.insertVocabHistory(req.body);
+  globalReturn<historyTypes>(res, {
+    statusCode: httpStatus.CREATED,
+    success: true,
+    message: 'History created successfully',
+    data,
+  });
+};
+
+const createLessonHistory: RequestHandler = async (req, res) => {
+  const data = await historyService.insertLessonHistory(req.body);
+  globalReturn<historyTypes>(res, {
+    statusCode: httpStatus.CREATED,
+    success: true,
+    message: 'History created successfully',
+    data,
+  });
+};
+
 export const historyController = {
   createHistory: catchAsync(createHistory),
+  createVocabHistory: catchAsync(createVocabHistory),
+  createLessonHistory: catchAsync(createLessonHistory),
 };

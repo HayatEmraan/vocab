@@ -13,7 +13,7 @@ import { ZodError } from 'zod';
 const errorHandler: ErrorRequestHandler = async (error, req, res, next) => {
   let message = error.message || 'Something went wrong';
   let errStack = error;
-  let status = error.statusCode || 500;
+  let status = error.status || 500;
 
   if (error instanceof ZodError) {
     const err = handleZodError(error);

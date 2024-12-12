@@ -33,4 +33,12 @@ vocabRoutes.patch(
   vocabController.updateVocab
 );
 
+vocabRoutes.post(
+  '/vocab-complete/:id',
+  auth(userRole.user),
+  vocabController.completeVocab
+);
+
+vocabRoutes.get('/stats', auth(userRole.admin), vocabController.getStats);
+
 export default vocabRoutes;

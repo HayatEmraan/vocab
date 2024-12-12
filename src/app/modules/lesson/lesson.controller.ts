@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { catchAsync } from '@app/utils/catchAsync';
 import globalReturn from '@app/utils/globalReturn';
 import { RequestHandler } from 'express';
@@ -42,8 +43,33 @@ const getSingleLesson: RequestHandler = async (req, res) => {
 };
 
 const updateLesson: RequestHandler = async (req, res) => {
-  const data = await lessonService.updateLesson(req.params.id, req.body);
+  const { _id } = req.user;
+  const data = await lessonService.updateLesson(req.params.id, {
+    ...req.body,
+    updatedId: _id,
+  });
   globalReturn<lessonTypes | null>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'lesson updated successfully',
+    data,
+  });
+};
+
+const getStats: RequestHandler = async (req, res) => {
+  const data = await lessonService.getStats();
+  globalReturn<any>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'lesson updated successfully',
+    data,
+  });
+};
+
+const completeLesson: RequestHandler = async (req, res) => {
+  const { _id } = req.user;
+  const data = await lessonService.completeLesson(req.params.id, _id);
+  globalReturn<any>(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'lesson updated successfully',
@@ -56,4 +82,6 @@ export const lessonController = {
   getAllLessons: catchAsync(getAllLessons),
   getSingleLesson: catchAsync(getSingleLesson),
   updateLesson: catchAsync(updateLesson),
+  getStats: catchAsync(getStats),
+  completeLesson: catchAsync(completeLesson),
 };

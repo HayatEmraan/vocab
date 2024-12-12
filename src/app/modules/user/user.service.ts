@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import appError from '@app/errors/appError';
 import userModel from './user.schema';
-import { userLoginTypes, userTypes } from './user.types';
+import { userLoginTypes, userReason, userTypes } from './user.types';
 import httpStatus from 'http-status';
 import createEncryptedToken from '@app/libs/generateToken';
-import { Types } from 'mongoose';
+import mongoose, { Types } from 'mongoose';
+import { userHistoryModel } from '../history/history.schema';
 
 const insertUser = async (payload: userTypes) => {
   const findUser = await userModel.findOne({ email: payload.email });
@@ -12,7 +14,27 @@ const insertUser = async (payload: userTypes) => {
     throw new appError('user already exists', httpStatus.CONFLICT);
   }
 
-  return await userModel.create(payload);
+  const session = await mongoose.startSession();
+
+  try {
+    await session.startTransaction();
+
+    const user = await userModel.create(payload);
+
+    await userHistoryModel.create({
+      reason: 'self registration',
+      userId: user._id,
+    });
+
+    await session.commitTransaction();
+    await session.endSession();
+
+    return user;
+  } catch (error: any) {
+    await session.abortTransaction();
+    await session.endSession();
+    throw new appError(error.message, httpStatus.INTERNAL_SERVER_ERROR);
+  }
 };
 
 const loginUser = async ({ email, password }: userLoginTypes) => {
@@ -57,14 +79,55 @@ const getUserById = async (id: Types.ObjectId) => {
   return await userModel.findById(id);
 };
 
-const updateUser = async (id: string, payload: Partial<userTypes>) => {
+const updateUser = async (
+  id: string,
+  payload: Partial<userTypes> & userReason
+) => {
+  const { reason, adminId, ...props } = payload;
+
   const findUser = await userModel.findById(id);
 
   if (!findUser) {
     throw new appError('user not found', httpStatus.NOT_FOUND);
   }
 
-  return await userModel.findByIdAndUpdate(id, payload, { new: true });
+  const session = await mongoose.startSession();
+
+  try {
+    await session.startTransaction();
+
+    await userHistoryModel.create({
+      ...payload,
+      adminId: adminId,
+      reason: reason,
+      userId: id,
+    });
+
+    const result = await userModel.findByIdAndUpdate(id, props, { new: true });
+
+    await session.commitTransaction();
+    await session.endSession();
+
+    return result;
+  } catch (error: any) {
+    await session.abortTransaction();
+    await session.endSession();
+    throw new appError(error.message, httpStatus.INTERNAL_SERVER_ERROR);
+  }
+};
+
+const getStats = async () => {
+  const total = await userModel.countDocuments();
+
+  const admin = await userModel.countDocuments({
+    role: 'admin',
+  });
+
+  const user = await userModel.countDocuments({
+    role: 'user',
+  });
+
+  return { total, admin, user };
 };
 
 export const userService = {
@@ -73,4 +136,5 @@ export const userService = {
   getUserById,
   updateUser,
   loginUser,
+  getStats,
 };

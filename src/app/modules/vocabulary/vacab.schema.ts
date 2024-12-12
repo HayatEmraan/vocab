@@ -17,6 +17,10 @@ const vocabSchema = new Schema<vocabTypes>(
       required: true,
       ref: 'user',
     },
+    updatedId: {
+      type: Schema.Types.ObjectId,
+      ref: 'user',
+    },
     pronunciation: {
       type: String,
       required: true,
@@ -28,6 +32,9 @@ const vocabSchema = new Schema<vocabTypes>(
     useCase: {
       type: String,
       required: true,
+    },
+    reason: {
+      type: String,
     },
   },
   {

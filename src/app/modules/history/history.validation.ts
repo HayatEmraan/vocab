@@ -6,3 +6,11 @@ export const historyValidate = z.object({
   action: z.string(),
   status: z.string(),
 });
+
+export const vocabHistoryValidate = z.object({
+  vocabId: z.string(),
+});
+
+export const lessonHistoryValidate = z.object({
+  lessonId: z.string(),
+});

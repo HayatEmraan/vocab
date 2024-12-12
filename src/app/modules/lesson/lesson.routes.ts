@@ -33,4 +33,12 @@ lessonRoutes.patch(
   lessonController.updateLesson
 );
 
+lessonRoutes.post(
+  '/lesson-complete/:id',
+  auth(userRole.user),
+  lessonController.completeLesson
+);
+
+lessonRoutes.get('/stats', auth(userRole.admin), lessonController.getStats);
+
 export default lessonRoutes;

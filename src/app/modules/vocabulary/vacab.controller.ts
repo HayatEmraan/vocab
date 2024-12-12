@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { catchAsync } from '@app/utils/catchAsync';
 import globalReturn from '@app/utils/globalReturn';
 import { RequestHandler } from 'express';
@@ -38,11 +39,36 @@ const getSingleVocab: RequestHandler = async (req, res) => {
 };
 
 const updateVocab: RequestHandler = async (req, res) => {
-  const data = await vocabService.updateVocab(req.params.id, req.body);
+  const { _id } = req.user;
+  const data = await vocabService.updateVocab(req.params.id, {
+    ...req.body,
+    updatedId: _id,
+  });
   globalReturn<vocabTypes | null>(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'vocab updated successfully',
+    data,
+  });
+};
+
+const completeVocab: RequestHandler = async (req, res) => {
+  const { _id } = req.user;
+  const data = await vocabService.completeVocab(req.params.id, _id);
+  globalReturn<any>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'vocab updated successfully',
+    data,
+  });
+};
+
+const getStats: RequestHandler = async (req, res) => {
+  const data = await vocabService.getStats();
+  globalReturn<any>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'vocab stats fetched successfully',
     data,
   });
 };
@@ -52,4 +78,6 @@ export const vocabController = {
   getAllVocab: catchAsync(getAllVocab),
   getSingleVocab: catchAsync(getSingleVocab),
   updateVocab: catchAsync(updateVocab),
+  completeVocab: catchAsync(completeVocab),
+  getStats: catchAsync(getStats),
 };

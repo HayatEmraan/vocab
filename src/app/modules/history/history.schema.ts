@@ -1,7 +1,11 @@
 import { model, Schema } from 'mongoose';
-import { historyTypes } from './history.types';
+import {
+  historyTypes,
+  lessonHistoryTypes,
+  vocabHistoryTypes,
+} from './history.types';
 
-const historySchema = new Schema<historyTypes>(
+const userHistorySchema = new Schema<historyTypes>(
   {
     userId: {
       type: Schema.Types.ObjectId,
@@ -10,14 +14,17 @@ const historySchema = new Schema<historyTypes>(
     },
     adminId: {
       type: Schema.Types.ObjectId,
-      required: true,
       ref: 'user',
     },
-    action: {
-      type: String,
-      required: true,
+    isActive: {
+      type: Boolean,
+      default: true,
     },
-    status: {
+    role: {
+      type: String,
+      default: 'user',
+    },
+    reason: {
       type: String,
       required: true,
     },
@@ -28,6 +35,54 @@ const historySchema = new Schema<historyTypes>(
   }
 );
 
-const historyModel = model<historyTypes>('history', historySchema);
+export const userHistoryModel = model<historyTypes>(
+  'userHistory',
+  userHistorySchema
+);
 
-export default historyModel;
+const lessonSchema = new Schema<lessonHistoryTypes>(
+  {
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: 'user',
+    },
+    lessonId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: 'lesson',
+    },
+  },
+  {
+    timestamps: true,
+    versionKey: false,
+  }
+);
+
+export const lessonHistoryModel = model<lessonHistoryTypes>(
+  'lessonHistory',
+  lessonSchema
+);
+
+const vocabHistorySchema = new Schema<vocabHistoryTypes>(
+  {
+    userId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: 'user',
+    },
+    vocabId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: 'vocab',
+    },
+  },
+  {
+    timestamps: true,
+    versionKey: false,
+  }
+);
+
+export const vocabHistoryModel = model<vocabHistoryTypes>(
+  'vocabHistory',
+  vocabHistorySchema
+);

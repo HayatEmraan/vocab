@@ -5,8 +5,8 @@ export const userValidate = z.object({
   email: z.string().email(),
   password: z.string().min(6),
   photoURL: z.string().url().optional(),
-  isActive: z.boolean(),
-  role: z.string(),
+  isActive: z.boolean().optional(),
+  role: z.string().optional(),
 });
 
 export const userUpdateValidate = z.object({
@@ -16,6 +16,7 @@ export const userUpdateValidate = z.object({
   photoURL: z.string().url().optional(),
   isActive: z.boolean().optional(),
   role: z.string().optional(),
+  reason: z.string(),
 });
 
 export const userLoginValidate = z.object({

@@ -8,4 +8,6 @@ export const lessonValidate = z.object({
 export const lessonUpdateValidate = z.object({
   name: z.string().optional(),
   number: z.number().int().optional(),
+  reason: z.string().optional(),
+  isCompleted: z.boolean().optional(),
 });

@@ -40,6 +40,8 @@ userRoutes.patch(
   userController.updateUser
 );
 
+userRoutes.get('/stats', auth(userRole.admin), userController.getStats);
+
 userRoutes.get('/all-users', auth(userRole.admin), userController.getAllUsers);
 
 export default userRoutes;

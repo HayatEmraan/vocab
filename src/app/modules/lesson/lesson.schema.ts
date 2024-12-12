@@ -12,6 +12,17 @@ const lessonSchema = new Schema<lessonTypes>(
       required: true,
       ref: 'user',
     },
+    updatedId: {
+      type: Schema.Types.ObjectId,
+      ref: 'user',
+    },
+    reason: {
+      type: String,
+    },
+    isCompleted: {
+      type: Boolean,
+      default: false,
+    },
     number: {
       type: Number,
       required: true,

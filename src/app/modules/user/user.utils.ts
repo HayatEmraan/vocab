@@ -9,6 +9,7 @@ const parseUser: RequestHandler = async (req, res, next) => {
 
   req.body = JSON.parse(req.body.data);
   req.body.photoURL = photoURL?.secure_url;
+
   next();
 };
 

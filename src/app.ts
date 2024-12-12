@@ -10,7 +10,12 @@ import errorHandler from '@app/middlewares/errorHandler';
 const app: Application = express();
 
 // middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+  })
+);
 app.use(helmet());
 app.use(cookieParser());
 app.use(morgan('dev'));
