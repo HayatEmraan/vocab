@@ -26,6 +26,12 @@ vocabRoutes.get(
   vocabController.getSingleVocab
 );
 
+vocabRoutes.get(
+  '/vocab-by-lesson/:id',
+  auth(userRole.admin, userRole.user),
+  vocabController.getVocabByLesson
+);
+
 vocabRoutes.patch(
   '/update-vocab/:id',
   auth(userRole.admin),

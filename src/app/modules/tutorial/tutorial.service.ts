@@ -1,4 +1,4 @@
-import tutorialModel from './tutorial.model';
+import tutorialModel from './tutorial.schema';
 import { tutorialTypes } from './tutorial.types';
 
 const insertTutorial = async (payload: tutorialTypes) => {

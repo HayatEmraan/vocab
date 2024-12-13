@@ -8,10 +8,10 @@ import httpStatus from 'http-status';
 
 const createLesson: RequestHandler = async (req, res) => {
   const { _id } = req.user;
-  console.log(req.user);
   const data = await lessonService.insertLesson({
     ...req.body,
     adminId: _id,
+    updatedId: _id,
   });
 
   globalReturn<lessonTypes>(res, {

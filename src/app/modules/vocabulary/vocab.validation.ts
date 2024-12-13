@@ -6,6 +6,7 @@ export const vocabValidate = z.object({
   pronunciation: z.string(),
   meaning: z.string(),
   useCase: z.string(),
+  id: z.string().optional(),
 });
 
 export const vocabUpdateValidate = z.object({

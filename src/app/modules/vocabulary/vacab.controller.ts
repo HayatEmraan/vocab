@@ -8,7 +8,12 @@ import { vocabTypes } from './vacab.types';
 
 const createVocab: RequestHandler = async (req, res) => {
   const { _id } = req.user;
-  const data = await vocabService.insertVocab({ ...req.body, adminId: _id });
+
+  const data = await vocabService.insertVocab({
+    ...req.body,
+    adminId: _id,
+    updatedId: _id,
+  });
 
   globalReturn<vocabTypes>(res, {
     statusCode: httpStatus.CREATED,
@@ -73,6 +78,16 @@ const getStats: RequestHandler = async (req, res) => {
   });
 };
 
+const getVocabByLesson: RequestHandler = async (req, res) => {
+  const data = await vocabService.vocabByLesson(req.params.id);
+  globalReturn<any>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'vocab fetched successfully',
+    data,
+  });
+};
+
 export const vocabController = {
   createVocab: catchAsync(createVocab),
   getAllVocab: catchAsync(getAllVocab),
@@ -80,4 +95,5 @@ export const vocabController = {
   updateVocab: catchAsync(updateVocab),
   completeVocab: catchAsync(completeVocab),
   getStats: catchAsync(getStats),
+  getVocabByLesson: catchAsync(getVocabByLesson),
 };

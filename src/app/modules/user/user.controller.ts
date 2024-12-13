@@ -29,7 +29,7 @@ const getMe: RequestHandler = async (req, res) => {
 
 const updateUser: RequestHandler = async (req, res) => {
   const { _id } = req.user;
-  const data = await userService.updateUser(req.user._id, {
+  const data = await userService.updateUser(req.params.id, {
     ...req.body,
     adminId: _id,
   });
@@ -44,7 +44,7 @@ const updateUser: RequestHandler = async (req, res) => {
 
 const getAllUsers: RequestHandler = async (req, res) => {
   const data = await userService.getAllUsers();
-  globalReturn<userTypes[]>(res, {
+  globalReturn<any[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'users fetched successfully',

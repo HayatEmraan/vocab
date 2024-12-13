@@ -6,6 +6,7 @@ export type vocabTypes = {
   adminId: Types.ObjectId;
   word: string;
   reason: string;
+  id: string;
   updatedId: Types.ObjectId;
   pronunciation: string;
   meaning: string;

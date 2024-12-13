@@ -45,6 +45,6 @@ userSchema.statics.isPasswordMatch = async (plain: string, hash: string) => {
   return await bcrypt.compare(plain, hash);
 };
 
-const userModel = model<userTypes, userInPass>('User', userSchema);
+const userModel = model<userTypes, userInPass>('user', userSchema);
 
 export default userModel;

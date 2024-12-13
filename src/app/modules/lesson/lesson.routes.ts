@@ -4,11 +4,15 @@ import { lessonUpdateValidate, lessonValidate } from './lesson.validation';
 import { lessonController } from './lesson.controller';
 import { auth } from '@app/middlewares/auth';
 import { userRole } from '../user/user.constant';
+import { upload } from '@app/utils/uploadImage';
+import parseLesson from './lesson.utils';
 
 const lessonRoutes = Router();
 
 lessonRoutes.post(
   '/create-lesson',
+  upload.single('image'),
+  parseLesson,
   auth(userRole.admin),
   validate(lessonValidate),
   lessonController.createLesson

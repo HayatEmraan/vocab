@@ -18,6 +18,11 @@ const lessonSchema = new Schema<lessonTypes>(
     },
     reason: {
       type: String,
+      default: 'created',
+    },
+    photoURL: {
+      type: String,
+      required: true,
     },
     isCompleted: {
       type: Boolean,

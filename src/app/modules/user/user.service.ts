@@ -66,7 +66,7 @@ const loginUser = async ({ email, password }: userLoginTypes) => {
 };
 
 const getAllUsers = async () => {
-  return await userModel.find();
+  return await userHistoryModel.find().populate('userId adminId');
 };
 
 const getUserById = async (id: Types.ObjectId) => {
@@ -96,12 +96,17 @@ const updateUser = async (
   try {
     await session.startTransaction();
 
-    await userHistoryModel.create({
-      ...payload,
-      adminId: adminId,
-      reason: reason,
-      userId: id,
-    });
+    await userHistoryModel.findOneAndUpdate(
+      {
+        userId: id,
+      },
+      {
+        ...payload,
+        adminId: adminId,
+        reason: reason,
+        userId: id,
+      }
+    );
 
     const result = await userModel.findByIdAndUpdate(id, props, { new: true });
 

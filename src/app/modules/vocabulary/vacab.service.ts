@@ -7,11 +7,15 @@ import mongoose from 'mongoose';
 import { vocabHistoryModel } from '../history/history.schema';
 
 const insertVocab = async (payload: vocabTypes) => {
-  return await vocabModel.create(payload);
+  const { id, ...props } = payload;
+  return await vocabModel.findByIdAndUpdate(id, props, {
+    new: true,
+    upsert: true,
+  });
 };
 
 const getAllVocab = async () => {
-  return await vocabModel.find();
+  return await vocabModel.find().populate('lessonId adminId updatedId');
 };
 
 const getSingleVocab = async (id: string) => {
@@ -20,7 +24,7 @@ const getSingleVocab = async (id: string) => {
   if (!findVocab) {
     throw new appError('Vocab not found', httpStatus.NOT_FOUND);
   }
-  return await vocabModel.findById(id);
+  return await vocabModel.findById(id).populate('lessonId adminId updatedId');
 };
 
 const updateVocab = async (id: string, payload: Partial<vocabTypes>) => {
@@ -94,6 +98,10 @@ const getStats = async () => {
   return { total, completed, inCompleted };
 };
 
+const vocabByLesson = async (id: string) => {
+  return await vocabModel.find({ lessonId: id }).populate('adminId lessonId');
+};
+
 export const vocabService = {
   insertVocab,
   getAllVocab,
@@ -101,4 +109,5 @@ export const vocabService = {
   updateVocab,
   completeVocab,
   getStats,
+  vocabByLesson,
 };

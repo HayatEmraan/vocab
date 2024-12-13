@@ -7,7 +7,11 @@ import { lessonHistoryModel } from '../history/history.schema';
 import mongoose from 'mongoose';
 
 const insertLesson = async (payload: lessonTypes) => {
-  return await lessonModel.create(payload);
+  const { id, ...props } = payload;
+  return await lessonModel.findByIdAndUpdate(id, props, {
+    new: true,
+    upsert: true,
+  });
 };
 
 const getAllLessons = async () => {
