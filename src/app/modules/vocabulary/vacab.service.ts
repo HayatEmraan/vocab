@@ -57,7 +57,7 @@ const completeVocab = async (id: string, userId: string) => {
 
     const findHistory = await vocabHistoryModel.findOne({
       userId: userId,
-      lessonId: id,
+      vocabId: id,
     });
 
     if (findHistory) {
@@ -66,7 +66,8 @@ const completeVocab = async (id: string, userId: string) => {
 
     const vocabHistory = await vocabHistoryModel.create({
       userId,
-      lessonId: id,
+      lessonId: findVocab.lessonId,
+      vocabId: id,
     });
 
     await session.commitTransaction();

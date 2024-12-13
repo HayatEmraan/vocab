@@ -104,6 +104,16 @@
       "date": 1734048005012,
       "name": "E:\\IQT24\\programming_hero\\logs\\winston\\errors\\msg-2024-12-13-06-error.log",
       "hash": "78d027041d6c83987eee512c199e0460c3c330b7eab4e0cdb98e5c3c8cbe4925"
+    },
+    {
+      "date": 1734062105318,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\errors\\msg-2024-12-13-09-error.log",
+      "hash": "86f315ce7a723f3f00e00fe692039bf8ef92ceb5821e1ee1e632f2bc202246b4"
+    },
+    {
+      "date": 1734062540545,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\errors\\msg-2024-12-13-10-error.log",
+      "hash": "88705aebf546a9692b3ce6128079de9c22296e4d69289cc934efa33ce55fe621"
     }
   ],
   "hashType": "sha256"

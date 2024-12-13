@@ -19,4 +19,5 @@ export type lessonHistoryTypes = {
 export type vocabHistoryTypes = {
   userId: Types.ObjectId;
   vocabId: Types.ObjectId;
+  lessonId: Types.ObjectId;
 };

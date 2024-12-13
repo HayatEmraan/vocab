@@ -91,6 +91,17 @@ const getStats: RequestHandler = async (req, res) => {
   });
 };
 
+const lessonStats: RequestHandler = async (req, res) => {
+  const { _id } = req.user;
+  const data = await userService.lessonStats(_id);
+  globalReturn<any>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'user lesson stats fetched successfully',
+    data,
+  });
+};
+
 export const userController = {
   createUser: catchAsync(createUser),
   getMe: catchAsync(getMe),
@@ -98,4 +109,5 @@ export const userController = {
   getAllUsers: catchAsync(getAllUsers),
   loginUser: catchAsync(loginUser),
   getStats: catchAsync(getStats),
+  lessonStats: catchAsync(lessonStats),
 };

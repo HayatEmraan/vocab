@@ -5,7 +5,10 @@ import { userLoginTypes, userReason, userTypes } from './user.types';
 import httpStatus from 'http-status';
 import createEncryptedToken from '@app/libs/generateToken';
 import mongoose, { Types } from 'mongoose';
-import { userHistoryModel } from '../history/history.schema';
+import {
+  lessonHistoryModel,
+  userHistoryModel,
+} from '../history/history.schema';
 
 const insertUser = async (payload: userTypes) => {
   const findUser = await userModel.findOne({ email: payload.email });
@@ -135,6 +138,22 @@ const getStats = async () => {
   return { total, admin, user };
 };
 
+const lessonStats = async (id: string) => {
+  const lesson = await lessonHistoryModel
+    .find({
+      userId: id,
+    })
+    .countDocuments();
+
+  const vocab = await userHistoryModel
+    .find({
+      userId: id,
+    })
+    .countDocuments();
+
+  return { lesson, vocab };
+};
+
 export const userService = {
   insertUser,
   getAllUsers,
@@ -142,4 +161,5 @@ export const userService = {
   updateUser,
   loginUser,
   getStats,
+  lessonStats,
 };

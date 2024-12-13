@@ -75,6 +75,11 @@ const vocabHistorySchema = new Schema<vocabHistoryTypes>(
       required: true,
       ref: 'vocab',
     },
+    lessonId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: 'lesson',
+    },
   },
   {
     timestamps: true,

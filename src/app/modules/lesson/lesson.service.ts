@@ -5,6 +5,8 @@ import { lessonTypes } from './lesson.types';
 import httpStatus from 'http-status';
 import { lessonHistoryModel } from '../history/history.schema';
 import mongoose from 'mongoose';
+import { userRole } from '../user/user.constant';
+import vocabModel from '../vocabulary/vacab.schema';
 
 const insertLesson = async (payload: lessonTypes) => {
   const { id, ...props } = payload;
@@ -14,7 +16,16 @@ const insertLesson = async (payload: lessonTypes) => {
   });
 };
 
-const getAllLessons = async () => {
+const getAllLessons = async (role: string) => {
+  if (role === userRole.user) {
+    const vocab = await vocabModel.find();
+    return await lessonModel
+      .find({
+        _id: { $in: vocab.map((item) => item.lessonId) },
+      })
+      .populate('adminId updatedId');
+  }
+
   return await lessonModel.find().populate('adminId updatedId');
 };
 

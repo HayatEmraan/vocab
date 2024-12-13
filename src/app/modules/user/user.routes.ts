@@ -44,4 +44,10 @@ userRoutes.get('/stats', auth(userRole.admin), userController.getStats);
 
 userRoutes.get('/all-users', auth(userRole.admin), userController.getAllUsers);
 
+userRoutes.get(
+  '/lesson-stats',
+  auth(userRole.user),
+  userController.lessonStats
+);
+
 export default userRoutes;

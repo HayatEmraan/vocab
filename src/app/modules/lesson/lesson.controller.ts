@@ -23,7 +23,9 @@ const createLesson: RequestHandler = async (req, res) => {
 };
 
 const getAllLessons: RequestHandler = async (req, res) => {
-  const data = await lessonService.getAllLessons();
+  const { role } = req.user;
+
+  const data = await lessonService.getAllLessons(role);
   globalReturn<lessonTypes[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
