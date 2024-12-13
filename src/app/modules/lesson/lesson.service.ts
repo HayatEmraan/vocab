@@ -19,11 +19,19 @@ const insertLesson = async (payload: lessonTypes) => {
 const getAllLessons = async (role: string) => {
   if (role === userRole.user) {
     const vocab = await vocabModel.find();
-    return await lessonModel
+
+    const lesson = await lessonModel
       .find({
         _id: { $in: vocab.map((item) => item.lessonId) },
       })
       .populate('adminId updatedId');
+
+    const vocabDuration = vocab?.reduce((acc, item) => acc + item.duration, 0);
+
+    return {
+      lessons: lesson,
+      duration: vocabDuration,
+    };
   }
 
   return await lessonModel.find().populate('adminId updatedId');
@@ -83,19 +91,17 @@ const completeLesson = async (id: string, userId: string) => {
       { new: true }
     );
 
-    const findHistory = await lessonHistoryModel.findOne({
-      userId: userId,
-      lessonId: id,
-    });
-
-    if (findHistory) {
-      throw new appError('lesson already exists', httpStatus.CONFLICT);
-    }
-
-    const lessonHistory = await lessonHistoryModel.create({
-      userId,
-      lessonId: id,
-    });
+    const lessonHistory = await lessonHistoryModel.findOneAndUpdate(
+      {
+        userId,
+        lessonId: id,
+      },
+      {
+        userId,
+        lessonId: id,
+      },
+      { new: true, upsert: true }
+    );
 
     session.commitTransaction();
 

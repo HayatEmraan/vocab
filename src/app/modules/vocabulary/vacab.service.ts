@@ -55,20 +55,22 @@ const completeVocab = async (id: string, userId: string) => {
       { new: true }
     );
 
-    const findHistory = await vocabHistoryModel.findOne({
-      userId: userId,
-      vocabId: id,
-    });
-
-    if (findHistory) {
-      throw new appError('vocab already exists', httpStatus.CONFLICT);
-    }
-
-    const vocabHistory = await vocabHistoryModel.create({
-      userId,
-      lessonId: findVocab.lessonId,
-      vocabId: id,
-    });
+    const vocabHistory = await vocabHistoryModel.findOneAndUpdate(
+      {
+        userId,
+        lessonId: findVocab.lessonId,
+        vocabId: id,
+      },
+      {
+        userId,
+        lessonId: findVocab.lessonId,
+        vocabId: id,
+      },
+      {
+        new: true,
+        upsert: true,
+      }
+    );
 
     await session.commitTransaction();
 
@@ -99,8 +101,31 @@ const getStats = async () => {
   return { total, completed, inCompleted };
 };
 
-const vocabByLesson = async (id: string) => {
-  return await vocabModel.find({ lessonId: id }).populate('adminId lessonId');
+const vocabByLesson = async (id: string, userId: string) => {
+  const completedVocab = await vocabHistoryModel.find({
+    userId,
+    lessonId: id,
+  });
+
+  const completedVocabIds = completedVocab.map((vocab) =>
+    vocab.vocabId.toString()
+  );
+
+  const vocabDocuments = await vocabModel
+    .find({ lessonId: id })
+    .sort({ createdAt: -1 })
+    .populate('adminId lessonId');
+
+  const vocabWithCompletionStatus = vocabDocuments.map((vocab) => {
+    return {
+      ...vocab.toObject(),
+      completed: completedVocabIds.includes(vocab._id.toString())
+        ? true
+        : false,
+    };
+  });
+
+  return vocabWithCompletionStatus;
 };
 
 export const vocabService = {

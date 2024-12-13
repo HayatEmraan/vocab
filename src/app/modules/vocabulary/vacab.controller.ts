@@ -79,7 +79,8 @@ const getStats: RequestHandler = async (req, res) => {
 };
 
 const getVocabByLesson: RequestHandler = async (req, res) => {
-  const data = await vocabService.vocabByLesson(req.params.id);
+  const { _id } = req.user;
+  const data = await vocabService.vocabByLesson(req.params.id, _id);
   globalReturn<any>(res, {
     statusCode: httpStatus.OK,
     success: true,

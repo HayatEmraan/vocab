@@ -8,6 +8,7 @@ export type vocabTypes = {
   reason: string;
   id: string;
   updatedId: Types.ObjectId;
+  duration: number;
   pronunciation: string;
   meaning: string;
   useCase: string;

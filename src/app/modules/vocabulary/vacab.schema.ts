@@ -33,6 +33,10 @@ const vocabSchema = new Schema<vocabTypes>(
       type: String,
       required: true,
     },
+    duration: {
+      type: Number,
+      default: 2,
+    },
     reason: {
       type: String,
       default: 'created',

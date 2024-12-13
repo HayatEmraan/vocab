@@ -26,7 +26,7 @@ const getAllLessons: RequestHandler = async (req, res) => {
   const { role } = req.user;
 
   const data = await lessonService.getAllLessons(role);
-  globalReturn<lessonTypes[]>(res, {
+  globalReturn<any>(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'lessons fetched successfully',

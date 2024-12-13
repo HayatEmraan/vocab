@@ -8,6 +8,7 @@ import mongoose, { Types } from 'mongoose';
 import {
   lessonHistoryModel,
   userHistoryModel,
+  vocabHistoryModel,
 } from '../history/history.schema';
 
 const insertUser = async (payload: userTypes) => {
@@ -145,13 +146,88 @@ const lessonStats = async (id: string) => {
     })
     .countDocuments();
 
-  const vocab = await userHistoryModel
+  const vocab = await vocabHistoryModel
     .find({
       userId: id,
     })
     .countDocuments();
 
-  return { lesson, vocab };
+  // group by date and return count document
+
+  const groupByLesson = await lessonHistoryModel.aggregate([
+    {
+      $match: {
+        userId: new mongoose.Types.ObjectId(id),
+      },
+    },
+    {
+      $group: {
+        _id: {
+          $dateToString: {
+            format: '%Y-%m-%d',
+            date: '$createdAt',
+          },
+        },
+        count: {
+          $sum: 1,
+        },
+      },
+    },
+    {
+      $sort: {
+        _id: 1,
+      },
+    },
+    {
+      $project: {
+        _id: 0,
+        date: '$_id',
+        count: 1,
+      },
+    },
+  ]);
+
+  const groupByVocab = await vocabHistoryModel.aggregate([
+    {
+      $match: {
+        userId: new mongoose.Types.ObjectId(id),
+      },
+    },
+    {
+      $group: {
+        _id: {
+          $dateToString: {
+            format: '%Y-%m-%d',
+            date: '$createdAt',
+          },
+        },
+        count: {
+          $sum: 1,
+        },
+      },
+    },
+    {
+      $sort: {
+        _id: 1,
+      },
+    },
+    {
+      $project: {
+        _id: 0,
+        date: '$_id',
+        count: 1,
+      },
+    },
+  ]);
+
+  return {
+    lesson,
+    vocab,
+    groupBy: {
+      lesson: groupByLesson,
+      vocab: groupByVocab,
+    },
+  };
 };
 
 export const userService = {
