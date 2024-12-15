@@ -14,6 +14,10 @@ const insertVocab = async (payload: vocabTypes) => {
   });
 };
 
+const findVocab = async (id: string) => {
+  return await vocabModel.findById(id);
+};
+
 const getAllVocab = async () => {
   return await vocabModel.find().populate('lessonId adminId updatedId');
 };
@@ -136,4 +140,5 @@ export const vocabService = {
   completeVocab,
   getStats,
   vocabByLesson,
+  findVocab,
 };

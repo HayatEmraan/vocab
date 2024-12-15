@@ -8,16 +8,22 @@ import httpStatus from 'http-status';
 
 const createLesson: RequestHandler = async (req, res) => {
   const { _id } = req.user;
+  const lesson = await lessonService.findLesson(req.body.id);
+
   const data = await lessonService.insertLesson({
     ...req.body,
     adminId: _id,
     updatedId: _id,
   });
 
+  const msg = lesson
+    ? 'lesson updated successfully'
+    : 'lesson created successfully';
+
   globalReturn<lessonTypes>(res, {
     statusCode: httpStatus.CREATED,
     success: true,
-    message: 'lesson created successfully',
+    message: msg,
     data,
   });
 };

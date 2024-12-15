@@ -9,16 +9,21 @@ import { vocabTypes } from './vacab.types';
 const createVocab: RequestHandler = async (req, res) => {
   const { _id } = req.user;
 
+  const vocab = await vocabService.findVocab(req.body.id);
   const data = await vocabService.insertVocab({
     ...req.body,
     adminId: _id,
     updatedId: _id,
   });
 
+  const msg = vocab
+    ? 'vocab updated successfully'
+    : 'vocab created successfully';
+
   globalReturn<vocabTypes>(res, {
     statusCode: httpStatus.CREATED,
     success: true,
-    message: 'vocab created successfully',
+    message: msg,
     data,
   });
 };

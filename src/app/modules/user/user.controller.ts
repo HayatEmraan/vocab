@@ -43,7 +43,9 @@ const updateUser: RequestHandler = async (req, res) => {
 };
 
 const getAllUsers: RequestHandler = async (req, res) => {
-  const data = await userService.getAllUsers();
+  const { _id } = req.user;
+  const data = await userService.getAllUsers(_id);
+
   globalReturn<any[]>(res, {
     statusCode: httpStatus.OK,
     success: true,

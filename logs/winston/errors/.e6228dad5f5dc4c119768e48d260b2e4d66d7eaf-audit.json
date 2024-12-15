@@ -129,6 +129,26 @@
       "date": 1734084351877,
       "name": "E:\\IQT24\\programming_hero\\logs\\winston\\errors\\msg-2024-12-13-16-error.log",
       "hash": "a2909a7ec841d4aa8d0d6cef801e60fd23b2d3bbfced4c0b6a58562bb3a68b1a"
+    },
+    {
+      "date": 1734265606172,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\errors\\msg-2024-12-15-18-error.log",
+      "hash": "b1582822ca732da4aae848f313950e1be505a02452bfe16b00fbab4a62bb36e4"
+    },
+    {
+      "date": 1734267964790,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\errors\\msg-2024-12-15-19-error.log",
+      "hash": "5c679d17e4fbad6e1818a34d4ff5e83d77b5f30dde7300270cdeb2afc8641a06"
+    },
+    {
+      "date": 1734272658720,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\errors\\msg-2024-12-15-20-error.log",
+      "hash": "afd67533bdf846be54aab681eb6c626343aa5922939615b2bf4b77ea1538e61c"
+    },
+    {
+      "date": 1734276115055,
+      "name": "E:\\IQT24\\programming_hero\\logs\\winston\\errors\\msg-2024-12-15-21-error.log",
+      "hash": "67f7ca5a70c47f6f79a2437b9aaa1b37f68e2fade8381dfcd53417947796eb35"
     }
   ],
   "hashType": "sha256"

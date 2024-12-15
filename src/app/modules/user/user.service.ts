@@ -69,8 +69,14 @@ const loginUser = async ({ email, password }: userLoginTypes) => {
   return { iv, encryptedToken };
 };
 
-const getAllUsers = async () => {
-  return await userHistoryModel.find().populate('userId adminId');
+const getAllUsers = async (id: string) => {
+  return await userHistoryModel
+    .find({
+      userId: {
+        $ne: id,
+      },
+    })
+    .populate('userId adminId');
 };
 
 const getUserById = async (id: Types.ObjectId) => {

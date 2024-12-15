@@ -10,28 +10,44 @@ import vocabModel from '../vocabulary/vacab.schema';
 
 const insertLesson = async (payload: lessonTypes) => {
   const { id, ...props } = payload;
-  return await lessonModel.findByIdAndUpdate(id, props, {
-    new: true,
-    upsert: true,
-  });
+  return await lessonModel.findOneAndUpdate(
+    {
+      _id: id,
+    },
+    props,
+    {
+      new: true,
+      upsert: true,
+      setDefaultsOnInsert: true,
+    }
+  );
+};
+
+const findLesson = async (id: string) => {
+  return await lessonModel.findById(id);
 };
 
 const getAllLessons = async (role: string) => {
   if (role === userRole.user) {
-    const vocab = await vocabModel.find();
+    const durations = await vocabModel.aggregate([
+      {
+        $group: {
+          _id: '$lessonId',
+          duration: { $sum: '$duration' },
+        },
+      },
+    ]);
 
     const lesson = await lessonModel
       .find({
-        _id: { $in: vocab.map((item) => item.lessonId) },
+        _id: { $in: durations.map((item) => item._id) },
       })
       .populate('adminId updatedId');
 
-    const vocabDuration = vocab?.reduce((acc, item) => acc + item.duration, 0);
-
-    return {
-      lessons: lesson,
-      duration: vocabDuration,
-    };
+    return lesson.map((lesson) => ({
+      ...lesson.toObject(),
+      duration: durations.find((v) => v._id.equals(lesson._id))?.duration || 0,
+    }));
   }
 
   return await lessonModel.find().populate('adminId updatedId');
@@ -125,4 +141,5 @@ export const lessonService = {
   updateLesson,
   getStats,
   completeLesson,
+  findLesson,
 };
